@@ -12,11 +12,8 @@ class CoursesPage extends React.Component {
   // the component has mounted by the time this method runs.
   componentDidMount() {
     // getCourses is an API call, (check courseApi.js) and uses a promise.
-    // in 'then' we provide the function to eexecute after the API call has been made.
-    getCourses().then(function(courses) {
-      // this.state.courses = courses // don't mutate state directly
-      this.setState({ courses: courses });
-    });
+    // in 'then' we provide the function to execute after the API call has been made.
+    getCourses().then(courses => this.setState({ courses: courses }));
   }
 
   render() {
