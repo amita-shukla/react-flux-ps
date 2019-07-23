@@ -6,6 +6,19 @@ class CoursesPage extends React.Component {
     courses: []
   };
 
+  //this life cycle method is used to set some state when a page loads
+  // this is the proper lifecycle method for API calls.
+  // The component must be mounted before we set state.
+  // the component has mounted by the time this method runs.
+  componentDidMount() {
+    // getCourses is an API call, (check courseApi.js) and uses a promise.
+    // in 'then' we provide the function to eexecute after the API call has been made.
+    getCourses().then(function(courses) {
+      // this.state.courses = courses // don't mutate state directly
+      this.setState({ courses: courses });
+    });
+  }
+
   render() {
     return <h2>Courses</h2>;
   }
