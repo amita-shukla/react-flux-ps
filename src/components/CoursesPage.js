@@ -19,7 +19,9 @@ class CoursesPage extends React.Component {
   // observe that we don't need to pass 'course' when we call this function from map
   renderCourseRow(course) {
     return (
-      <tr>
+      // when iterating over an array, react requires a key for keeping track of each unique record.
+      // adding key is a preformance operaration
+      <tr key={course.id}>
         <td>{course.title}</td>
         <td>{course.authorId}</td>
         <td>{course.category}</td>
