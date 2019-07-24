@@ -6,21 +6,12 @@ class CoursesPage extends React.Component {
     courses: []
   };
 
-  //this life cycle method is used to set some state when a page loads
-  // this is the proper lifecycle method for API calls.
-  // The component must be mounted before we set state.
-  // the component has mounted by the time this method runs.
   componentDidMount() {
-    // getCourses is an API call, (check courseApi.js) and uses a promise.
-    // in 'then' we provide the function to execute after the API call has been made.
     getCourses().then(courses => this.setState({ courses: courses }));
   }
 
-  // observe that we don't need to pass 'course' when we call this function from map
   renderCourseRow(course) {
     return (
-      // when iterating over an array, react requires a key for keeping track of each unique record.
-      // adding key is a preformance operaration
       <tr key={course.id}>
         <td>{course.title}</td>
         <td>{course.authorId}</td>
