@@ -3,16 +3,20 @@ import HomePage from "./HomePage";
 import AboutPage from "./AboutPage";
 import CoursesPage from "./CoursesPage";
 import Header from "./common/Header";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
+import NotFoundPage from "./NotFoundPage";
 
 function App() {
   return (
     <div className="container-fluid">
       <Header />
-      <Route path="/" exact component={HomePage} />{" "}
-      {/* Display HomePage when the url exactly matches the path, and not partially */}
-      <Route path="/courses" component={CoursesPage} />
-      <Route path="/about" component={AboutPage} />
+      <Switch>
+        <Route path="/" exact component={HomePage} />{" "}
+        <Route path="/courses" component={CoursesPage} />
+        <Route path="/about" component={AboutPage} />
+        <Route component={NotFoundPage} />{" "}
+        {/*This needs to be the last of the switch */}
+      </Switch>
     </div>
   );
 }
