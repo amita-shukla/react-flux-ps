@@ -72,19 +72,11 @@
     },
     {
       "id": 11,
-      "slug": "amita",
-      "title": "Amita",
-      "authorId": 1,
-      "category": "andjksn",
-      "createdAt": 1564557857607
-    },
-    {
-      "id": 12,
-      "slug": "dfdg",
-      "title": "dfdg",
+      "slug": "sds",
+      "title": "sds",
       "authorId": 2,
-      "category": "dfgfd",
-      "createdAt": 1564558136770
+      "category": "sdf",
+      "createdAt": 1564559359332
     }
   ],
   "authors": [
